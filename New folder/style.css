@@ -1,0 +1,60 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+ /* background-image: url('https://raw.githubusercontent.com/Deepak5j/WebImages/master/Tiles/Black_and_Blue_Background_Wallpaper_8z5fg.jpg');
+  background-repeat: repeat-x repeat-x;*/
+  
+}
+h1 {
+    color: #000;
+    /*text-shadow: 2px 2px 1px #f00;*/
+    text-align: center;
+    font-family: 'Verdana';
+    font-size: 30px
+}
+.mm {
+    color:#000;
+    /*text-shadow: 2px 2px 1px #f00;*/
+    text-align: justify;
+    font-family: 'Segoe UI';
+    font-size: 17px
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    color: #000;
+}
+td {
+    color: #000;
+    /*text-shadow: 2px 2px 1px #f00;*/
+    font-family: 'Verdana';
+    font-size: 17px
+}
+.a, .b, .c, .d, .e, .f, .g, .h, .i {
+    display: none;
+    color: #000;
+    /*text-shadow: 2px 2px 1px #ff0000;*/
+    font-family: 'Segoe UI';
+    font-size: 17px;
+    text-align: justify;
+}
+.btn {
+  padding: 15px 25px;
+  font-size: 15px;
+  outline: none;
+  color: #040;
+  background-color: #0ff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px #f00;
+  font-weight: bold;
+}
+.btn:active {
+  background-color: #0ff;
+  box-shadow: 0 5px #0ff;
+  transform: translateY(4px);
+}

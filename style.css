@@ -1,0 +1,72 @@
+body, html {
+/*	background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("./images/background.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;*/
+}
+
+.body {
+	margin-top: 3%;
+	/*color: #fff;*/
+}
+
+.birthdate {
+	width: 100%;
+	/*border: 1px solid #000;*/
+	/*border-radius: 10px;*/
+	/*border-color: #bfbfbf;*/
+	/*padding: 2% 2% 2% 2%;*/
+}
+
+.h61 {
+	margin-top: 3%;
+	font-size: 0.80em;
+	color: tomato;
+}
+
+.span1 {
+	font-size: 0.85em;
+	color: #737373;
+	font-weight: 400;
+}
+
+.number {
+	margin-right: 5%;
+}
+
+.select {
+	display: inline-block;
+}
+
+select:nth-child(3) {
+	margin-top: 3%;
+}
+
+select:nth-child(4) {
+	margin-top: 3%;
+}
+
+/* CARD */
+
+.card {
+	width: 35%;
+}
+
+.card-img-top {
+	width: auto;
+	height: 150px;
+	opacity: 0.8;
+}
+
+.equation {
+	margin-top: 3%;
+}
+
+/* DESCRIPTION */
+
+.description {
+	background: tomato;
+	position: relative;
+	left: 0%;
+}
