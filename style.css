@@ -6,6 +6,10 @@ body, html {
     background-repeat: no-repeat;*/
 }
 
+.container {
+	/*background: lavender;*/
+}
+
 .body {
 	margin-top: 3%;
 	/*color: #fff;*/
@@ -60,13 +64,24 @@ select:nth-child(4) {
 }
 
 .equation {
-	margin-top: 3%;
+	/*margin-top: 3%;*/
+}
+
+.birth {
+	width: 35%;
+}
+
+.birthcard {
+	width: 90%;
 }
 
 /* DESCRIPTION */
 
 .description {
-	background: tomato;
-	position: relative;
-	left: 0%;
+	vertical-align: top;
+}
+
+.a, .b, .c, .d, .e, .f, .g, .h, .i, .j, .k {
+	display: none;
+	text-align: justify;
 }

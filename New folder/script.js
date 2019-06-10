@@ -4,14 +4,14 @@ function calculate() {
         alert("Select Your Date of Birth");
     else
     {
-        alert("Date: "+x);
+        // alert("Date: "+x);
         var result = x.split('-');
         var m = result.join('');
         var sum = parseInt(m[0])+parseInt(m[1])+parseInt(m[2])+parseInt(m[3])+
                   parseInt(m[4])+parseInt(m[5])+parseInt(m[6])+parseInt(m[7]);
 
 
-        alert("Sum: "+sum);
+        // alert("Sum: "+sum);
         var num = parseInt(sum);
         var cal=0;
         while(num > 0) {
@@ -25,7 +25,7 @@ function calculate() {
         }
 
         
-        alert("Cal: "+cal);
+        // alert("Cal: "+cal);
     }
     switch(cal) {
         case 1:
