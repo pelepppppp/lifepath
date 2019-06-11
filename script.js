@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	$("#card-body").hide();
+	// $("#card-body").hide();
 	$("#btn").click(function () {
 		$("#card-body").show();
 		calculate();
@@ -13,10 +13,48 @@ function calculate() {
 
 	$("#birthday").html("Birthdate: " + month + "/" + date + "/" + year);
 
+	// MONTH
+	var numMonth = month;
+	var digitsOfMonth = [];
+	while(numMonth > 0){
+		digitsOfMonth[digitsOfMonth.length] = numMonth % 10;
+		numMonth = parseInt(numMonth / 10);
+	}
+	digitsOfMonth.reverse();
+	var sumOfMonth = digitsOfMonth[0] + digitsOfMonth[1];
+
+	$("#monthForEquation").html(month + " : " + digitsOfMonth[0] + "+" + digitsOfMonth[1] + " = " + sumOfMonth);
+
+	// DAY
+	var numDay = date;
+	var digitsOfDay = [];
+	while(numDay > 0){
+		digitsOfDay[digitsOfDay.length] = numDay % 10;
+		numDay = parseInt(numDay / 10);
+	}
+	digitsOfDay.reverse();
+	var sumOfDay = digitsOfDay[0] + digitsOfDay[1];
+
+	$("#dayForEquation").html(date + " : " + digitsOfDay[0] + "+" + digitsOfDay[1] + " = " + sumOfDay);
+
+	// YEAR
+	var numYear = year;
+	var digitsOfYear = [];
+	while(numYear > 0){
+		digitsOfYear[digitsOfYear.length] = numYear % 10;
+		numYear = parseInt(numYear / 10);
+	}
+	digitsOfYear.reverse();
+	var sumOfDay = digitsOfYear[0] + digitsOfYear[1] + digitsOfYear[2] + digitsOfYear[3];
+
+	$("#yearForEquation").html(year + " : " + digitsOfYear[0] + "+" + digitsOfYear[1] + "+" + digitsOfYear[2] + "+" + digitsOfYear[3] + " = " + sumOfDay);
+
+
 	var x = document.getElementById("birthday").value;
 	var sum = parseInt(month) + parseInt(date);
 	var yearsum = parseInt(year[0]) + parseInt(year[1]) + parseInt(year[2]) + parseInt(year[3]);
 	var total = yearsum + sum;
+
 
 
 	var num = total;
@@ -26,10 +64,15 @@ function calculate() {
 		num = parseInt(num / 10);
 	}
 	digits.reverse();
-	console.log(digits);
+	// console.log(digits);
 
-	for (var i = 0, lastNaJud = 0; i < digits.length; lastNaJud += digits[i++]);
-	console.log(lastNaJud);
+	for (var i = 0, lastNaJud = 0; i < digits.length; lastNaJud += digits[i++]){
+		if(lastNaJud == 13){
+			var last = (lastNaJud % 10) + 1;
+			console.log(last);
+		}
+	}
+
 
 
 	$("#yearsum").html("Sum: " + lastNaJud);
