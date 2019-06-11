@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <script src="index.js"></script>
+    </head>
+    <body class="center">
+          <div class="card">
+              <img class="card-img-top" src="img.jpeg" alt="Card image" >
+              <div class="card-body">
+                  <h4 class="card-title">Life Path Calculator</h4>
+                  <div class="form-group">
+                      <label for="sel1">Select a birth date:</label>
+                      <select class="form-control" id="month" name="sellist1">
+                        <option selected disabled>Month</option>
+                        <option value="1">Jan</option>
+                        <option value="2">Feb</option>
+                        <option value="3">Mar</option>
+                        <option value="4">Apr</option>
+                        <option value="5">May</option>
+                        <option value="6">Jun</option>
+                        <option value="7">Jul</option>
+                        <option value="8">Aug</option>
+                        <option value="9">Sep</option>
+                        <option value="10">Oct</option>
+                        <option value="11">Nov</option>
+                        <option value="12">Dec</option>
+                      </select>
+                      <br>
+                      <select class="form-control" id="day" name="sellist2">
+                          <option selected disabled>Day</option>
+                          <option>1</option>
+                          <option>2</option>
+                          <option>3</option>
+                          <option>4</option>
+                          <option>5</option>
+                          <option>6</option>
+                          <option>7</option>
+                          <option>8</option>
+                          <option>9</option>
+                          <option>10</option>
+                          <option>11</option>
+                          <option>12</option>
+                          <option>13</option>
+                          <option>14</option>
+                          <option>15</option>
+                          <option>16</option>
+                          <option>17</option>
+                          <option>18</option>
+                          <option>19</option>
+                          <option>20</option>
+                          <option>21</option>
+                          <option>22</option>
+                          <option>23</option>
+                          <option>24</option>
+                          <option>25</option>
+                          <option>26</option>
+                          <option>27</option>
+                          <option>28</option>
+                          <option>29</option>
+                          <option>30</option>
+                          <option>31</option>
+                        </select>
+                        <br>
+                        <select class="form-control" id="year" name="sellist3">
+                            <option selected disabled>Year</option>
+                            <option>2016</option>
+                            <option>2015</option>
+                            <option>2014</option>
+                            <option>2013</option>
+                            <option>2012</option>
+                            <option>2011</option>
+                            <option>2010</option>
+                            <option>2009</option>
+                            <option>2008</option>
+                            <option>2007</option>
+                            <option>2006</option>
+                            <option>2005</option>
+                            <option>2004</option>
+                            <option>2003</option>
+                            <option>2002</option>
+                            <option>2001</option>
+                            <option>2000</option>
+                            <option>1999</option>
+                            <option>1998</option>
+                            <option>1997</option>
+                            <option>1996</option>
+                            <option>1995</option>
+                            <option>1994</option>
+                            <option>1993</option>
+                            <option>1992</option>
+                            <option>1991</option>
+                            <option>1990</option>
+                            <option>1989</option>
+                            <option>1988</option>
+                            <option>1987</option>
+                            <option>1986</option>
+                          </select>
+                          <p><span id="color">OR</span> , select a number</p>
+                          <select class="form-control" id="sel4" name="sellist4">
+                              <option selected disabled>Number</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                              <option>5</option>
+                              <option>6</option>
+                              <option>7</option>
+                              <option>8</option>
+                              <option>9</option>
+                              <option>10</option>
+                          </select>
+                          <input type="button" class="btn btn-outline-warning go" value="GO">
+                  </div>
+          </div>
+      </div>
+      <div class="card" id="card1">
+          <div class="card-body">Date Equation: 
+            <br><br>
+              <p>Birthdate:&nbsp;<span id="bday"></span></p>
+              <p id="birthmonth"></p>
+              <p id="birthday"></p>
+              <p id="birthyear"></p>
+              <p id="sum"></p>
+              <p id="yearsum"></p>
+          </div>        
+      </div>
+      <!-- <div class="one">
+          <p>
+            <b> The Natural Born Leader </b>
+            The Life Path 1 is one of leadership and trailblazing. With a strong sense of independence, you do not like relying on other people, especially if you feel they are holding you back. Often, you may feel like it is better to go it alone. 
+            
+            You would do well as an entrepreneur because you aren't afraid to take risks! You march to the beat of your own tune and the people around you generally don't hear until the tune is completed and on the top 100 charts. You tend to do things your own way and create innovation by stirring up the pot. People such as Henry Ford, Charlie Chaplin, Ozzy Osbourne, Tom Cruise, all stayed true to their Life Path 1, you should too.
+            
+            As a Life Path 1, be careful and don't try to control everything and everyone around you as you plow headlong towards your goals. In life it is still beneficial to maintain a balance
+          </p>
+      </div>
+      <div class="two">
+        <p>
+            <b> The Diplomat </b>
+            As a Life Path 2 you will find yourself attracted to a life of building and nurturing relationships. You bring unity and compassion to the world with your big heart and have a tendency to bring out the good in people in your life.
+            
+            You can be very affectionate and considerate of other people's needs. You make good mediators because you can often see both sides of an argument with amazing clarity, which can be a very positive quality... Except when arguing your own points because you tend to become indecisive.
+            
+            Careers that suit the Life Path 2 are ones that will allow you to serve others and society. Examples of these at the highest level would be: diplomat, president, ambassador. But make no mistake, even as a social worker or baby-sitter you can still make an impact with your strong nurturing influence. Some fellow Life Path 2's are: Barrack Obama, Tony Blaire, Jennifer Aniston, Amelia Earhart, Meg Ryan, Jennifer Lopez, Jackie Kennedy.
+            
+            One thing to be aware of as a Life Path 2, since you thrive on giving and helping, you can become resentful when someone elses generosity is not returned in the capacity that you give. It is important for you to keep in mind that everyone shows their appreciation in different and often widely dissimilar ways. 
+            
+            If you are reading this because you know someone a Life Path 2, be sure to show your appreciation whenever possible, be it a simple card, a hug, flowers, or even treating them to dinner.            
+        </p>
+    </div>
+    <div class="three">
+        <p>
+            <b> The Creative </b>
+            People with a Life Path 3 are the most artistic in the bunch. You find ways of creating the most beautiful things in this world such as art, music, literature, etc. You breathe life into culture, and make it seem so simple because of your natural gift for expression. This explains why the entertainment industry is chock full of Life Path 3's. Noteworthy examples include: Chris Rock, Jackie Chan, Jamie Foxx, Nelly Furtado, Snoop Dogg, and Rihanna to name a few. 
+            
+            Your mindset will do well by ignoring any cynics or defeatists you may come across. Stay headstrong with your creative outlet & true to you goals, and they will often pay off personally, financially, or both.
+            
+            All Life Path 3's tend to enjoy life and all that they can get out of it. The extraverted 3's love being in the spotlight and showing off their talent. On the other hand, introverted 3's lean more toward solitary creative pursuits that can garner them a following without being in the spotlight, such as an artist or writer.
+        </p>
+    </div>
+    <div class="four">
+        <p>
+            <b> The Worker </b>
+            The life of a Life Path 4 is one of work and discipline to feel stable. You do not like taking short-cuts and often feel that the best way to do anything is through dedications and perseverance. You can see through "Get Rich Quick" schemes and consider them to be a waste of time, you see that time as being better spent working towards the solid goal. 
+            
+            You like challenge, and may consider everything a challenge, sometimes to a fault. This can lead to discussions, and even arguments, about what is the best way to do something. 
+            
+            You're very headstrong and will insist on "not taking a shortcut". You may feel that spending hours and days to find the "best way" to do something will pay off greatly in the long run.
+            
+            You need stability to feel comfortable. The world often finds 4's in a position of manager and business leader because of their desire to lead people to a defined goal. A career that deals with finite items, patterns, and structure (finance, accounting, engineering, etc.) are best suited to the Life Path 4 because the careers require an attention to detail.
+        </p>
+    </div>
+    <div class="five">
+        <p>
+            <b> The Flexible Five </b>
+            The Life Path 5 loves to have variety in life. Anything new is exciting. Whether it is traveling to a place you've never been, or meeting new people, you are always looking for that next experience and adventure. 
+            
+            The war cry of the Life Path 5 is "Freedom!"
+            
+            You need to explore what life has to offer, and don't see any need to be rooted to a specific place. You tend to be the life of the party because you will go out of your way to meet everyone in the room. 
+            
+            For the Life Path 5 a career that requires you to be in a certain place at a certain time everyday will not be the best situation. Instead you should consider a career that provides a unique daily experience. This could be careers from sales, where you interact with various clients, to a nature photographer which requires you to travel and explore the farthest reaches of earth. 
+        </p>
+    </div>
+    <div class="six">
+        <p>
+            <b> The Harmonizer </b>
+            The Life Path 6 looks for ways to make harmony with everything you encounter. Whether it is art, music, or relationships, no other Life Path can make things coalesce as naturally as you can. Your magnetic personality draws people in and can lead to you being the center of attention. 
+            
+            You will find that your life will revolve around your family, and friends. You have an innate ability to nurture the people around you. As the person who usually takes charge of a situation you tend to be, or are on the way to being, the head of staff. 
+            
+            Don't let your innate ability to lead go to your head, this can lead to you trying to control every situation, and that is not what being a 6 is about. Learn to balance 'leading and nurturing' so as to raise up the people around you, instead of 'demanding and controlling' which will alienate people.
+            
+            Some notable Life Path 6 people you may know: John Lennon, Michael Jackson, Justin Timberlake, Thomas Edison, Stephen King.
+        </p>
+    </div>
+    <div class="seven">
+        <p>
+            <b> Seeker of Knowledge </b>
+            As a Life Path 7 you are always looking for the answers. Whether the question is big or small, doesn't matter, it’s the glory of finding the answer that drives you. This can lead to some interesting journeys during your life since you tend to seek spiritual or inner self understanding. 
+            
+            You tend to do this journey on your own and can live inside your own head for lengths of time. You can see situations from many different angles. This is great for careers that requires you to analyse a situation solo, or weed through large amounts of data.
+            
+            However, because of your desire to process things and stay in your own head, it can take a long time for someone else to get to know you. This can make relationships difficult to flourish and maintain. You are highly sensitive, but shy away from emotions that may be foreign.
+        </p>
+    </div>
+    <div class="eight">
+        <p>
+            <b> The Powerhouse </b>
+            As a Life Path 8 you are alive to make an impact on the world through your drive and ambition. You are a person of authority, and material wealth. You will often master the art of being successful in the career of your choosing. 
+            
+            You work very hard to reach your goals. You will often be considered a workaholic. You can sometimes let hitting your goals, and working, take precedence on other aspects of your life like personal relationships with family and friends. 
+            
+            Strive For Balance
+            You will typically have an issue with authority, whether in the form of a boss, police, government official, landlord, etc. which can get you into trouble. This can also drive you to seek out and become a person of authority yourself, so that you don’t have to answer to anyone except yourself. When an understanding of the need for a balance between work and personal life is reached, you can become unstoppable. 
+        </p>
+    </div>
+    <div class="nine">
+        <p>
+            You have great compassion and idealism. You are a utopian, and will spend your life trying to realize some aspect of your utopian dream, sacrificing money, time, and energy for a better world. It is in giving that you will find much satisfaction. You have a broad outlook on life. You tend to see the big picture, rather than the minute details.
+
+            You naturally attract people from all walks of life who can fit into your larger plans and take over the areas you find uninteresting. The person with a 9 Life Path is rarely prejudiced or accepts social biases of people. Instead, they evaluate people on the basis of what they can do for the larger cause. They are the true egalitarian.
+            
+            <b> You Bring Beauty To Your Surroundings </b>
+            You are imaginative and creative, especially at harmoniously arranging the beauty already potential in the environment. These abilities can lead you into such fields as interior decorating, landscape art, and photography. But because of your strong social consciousness, you can be an effective politician, lawyer, judge, minister, teacher, healer, and environmentalist. Vocations that require self- sacrifice and have a clear social impact are common among 9s.
+        </p>
+    </div>
+    <div class="eleven">
+        <p>
+            <b> The Healer </b>
+            You know you’re different, you don’t need other people to tell you that. As a Life Path 11, life is filled with mysterious connections and experiences that just seem to "Pop Up". You’re more intuitive, or sensitive, than other people you know.
+            
+            You are here to help people heal in some capacity, and you may already be in a classical healing profession, but you may also help people through your art, words, or other creative outlets. You may find it deeply gratifying to tap into your spiritual side and allow your essence or gifts to be fully realized or expanded upon. 
+            
+            You may have found that your life sways from one intense situation to another. Although this can be draining at times, know that it provides you with a greater depth of experiences so you can grow faster. You are considered the "Wounded Healer", someone who helps themselves by helping others. 
+            
+            Some of the careers that are best suited for Life Path 11’s all include positions where they are listening and working to improve a person’s life. For example: Minister, Psychologist, Teacher and Charity Worker. 
+            
+            Some of your fellow Life Path 11’s include: Michael Jordan, Bill Clinton, Prince William, David Beckham, Ronald Reagan, Wolfgang Amadeus Mozart, and Harry Houdini. 
+            
+            A word of caution: Be mindful not to allow your search for spiritual enlightenment overcome your life and close relationships. There have been many who feel they must go on an arduous journey of self-discovery only to realize that they didn’t need the journey’s harsh lessons in order to find what they were looking for. This self-imposed scenario could inadvertently lead to broken or damaged relationships with the friends and family members who could have been helpful or rewarding in the Life Path 11’s pursuit of enlightenment. 
+        </p>
+    </div>
+    <div class="twentytwo">
+        <p>
+            <b> The Master Builder </b> 
+            The Life Path 22 is one of the most powerful and influential paths in numerology. Your own abilities may seem overwhelming at times, and difficult to manage, but learning to harness your gifts will allow you greater control over your destiny, and in some cases, the destiny of others. This may cause you to feel as though a heavy burden rests on your shoulders. Be careful not to take on too much at once. And at the same time, don’t be afraid to challenge yourself. 
+            
+            22s are some of the biggest thinkers and innovators of our world and often use their big ideas to change lives, in some cases even inspiring hundreds if not millions through their voice, art, ideals, or strength of character. 
+            
+            If you embrace the catalyst that you can be, the impact you can potentially have on others is enormous. If you allow fear of your power to stifle you, it can spread like a weed and prevent you from reaching your true potential. Please don’t let this happen, the world needs all the 22’s to move us into a more enlightened tomorrow.
+            
+            In many cases, the Life Path 22 gains full control over their abilities later in life when they are most open and accepting of their power, though a person with a strong sense of self can unlock these gifts at a comparatively young age. To give you an idea of what can be achieved when a Life Path 22 fully embraces their ability early on in life, we don’t have to look any further than the likes of Will Smith, Paul McCartney, the 14th Dalai Lama, Sir Richard Branson, and Tupac Shakur. 
+        </p>
+    </div> -->
+    </body>
+</html>
