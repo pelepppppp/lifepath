@@ -21,10 +21,14 @@ function calculate() {
 		numMonth = parseInt(numMonth / 10);
 	}
 	digitsOfMonth.reverse();
-	var sumOfMonth = digitsOfMonth[0] + digitsOfMonth[1];
-
-	$("#monthForEquation").html(month + " : " + digitsOfMonth[0] + "+" + digitsOfMonth[1] + " = " + sumOfMonth);
-
+	if(digitsOfMonth.length === 2){
+		var sumOfMonth = digitsOfMonth[0] + digitsOfMonth[1];
+		$("#monthForEquation").html(month + " : " + digitsOfMonth[0] + "+" + digitsOfMonth[1] + " = " + sumOfMonth);
+	} else {
+		var sumOfMonth = digitsOfMonth[0];
+		$("#monthForEquation").html(month + " : " + digitsOfMonth[0] + " = " + sumOfMonth);
+	}
+	
 	// DAY
 	var numDay = date;
 	var digitsOfDay = [];
@@ -33,9 +37,13 @@ function calculate() {
 		numDay = parseInt(numDay / 10);
 	}
 	digitsOfDay.reverse();
-	var sumOfDay = digitsOfDay[0] + digitsOfDay[1];
-
-	$("#dayForEquation").html(date + " : " + digitsOfDay[0] + "+" + digitsOfDay[1] + " = " + sumOfDay);
+	if(digitsOfDay.length === 2){
+		var sumOfDay = digitsOfDay[0] + digitsOfDay[1];
+		$("#dayForEquation").html(date + " : " + digitsOfDay[0] + "+" + digitsOfDay[1] + " = " + sumOfDay);
+	} else {
+		var sumOfDay = digitsOfDay[0];
+		$("#dayForEquation").html(date + " : " + digitsOfDay[0] + " = " + sumOfDay);
+	}
 
 	// YEAR
 	var numYear = year;
@@ -45,70 +53,92 @@ function calculate() {
 		numYear = parseInt(numYear / 10);
 	}
 	digitsOfYear.reverse();
-	var sumOfDay = digitsOfYear[0] + digitsOfYear[1] + digitsOfYear[2] + digitsOfYear[3];
+	var sumOfYear = digitsOfYear[0] + digitsOfYear[1] + digitsOfYear[2] + digitsOfYear[3];
 
-	$("#yearForEquation").html(year + " : " + digitsOfYear[0] + "+" + digitsOfYear[1] + "+" + digitsOfYear[2] + "+" + digitsOfYear[3] + " = " + sumOfDay);
+	var sumOfYearDigits = sumOfYear;
+	var digitsSumOfYear = [];
+	while(sumOfYearDigits > 0){
+		digitsSumOfYear[digitsSumOfYear.length] = sumOfYearDigits % 10;
+		sumOfYearDigits = parseInt(sumOfYearDigits / 10);
+	}
+	digitsSumOfYear.reverse();
+	var sumOfDigitsOfYear = digitsSumOfYear[0] + digitsSumOfYear[1];
+	
 
+	if(digitsSumOfYear.length === 2){
+		$("#yearForEquation").html(year + " : " + digitsOfYear[0] + "+" + digitsOfYear[1] + "+" + digitsOfYear[2] + "+" + digitsOfYear[3] + " = " + sumOfYear + " = " + digitsSumOfYear[0] + "+" + digitsSumOfYear[1] + " = " + sumOfDigitsOfYear);
+	} else {
+		$("#yearForEquation").html(year + " : " + digitsOfYear[0] + "+" + digitsOfYear[1] + "+" + digitsOfYear[2] + "+" + digitsOfYear[3] + " = " + sumOfYear);
+	}
 
-	var x = document.getElementById("birthday").value;
-	var sum = parseInt(month) + parseInt(date);
-	var yearsum = parseInt(year[0]) + parseInt(year[1]) + parseInt(year[2]) + parseInt(year[3]);
-	var total = yearsum + sum;
-
-
-
-	var num = total;
+	//SUM OF MONTH, DAY, AND YEAR
+	var sumOfMonthDayYear = sumOfMonth + sumOfDay + sumOfYear;
+	var num = sumOfMonthDayYear;
 	var digits = [];
 	while (num > 0) {
 		digits[digits.length] = num % 10;
 		num = parseInt(num / 10);
 	}
 	digits.reverse();
-	// console.log(digits);
 
-	for (var i = 0, lastNaJud = 0; i < digits.length; lastNaJud += digits[i++]){
-		if(lastNaJud == 13){
-			var last = (lastNaJud % 10) + 1;
+	for (var i = 0, sumOfDMY = 0; i < digits.length; sumOfDMY += digits[i++]){
+		if(sumOfDMY == 13){
+			var last = (sumOfDMY % 10) + 1;
 			console.log(last);
 		}
 	}
 
+	if(digitsSumOfYear.length === 2){
+		$("#yearsum").html(sumOfMonth + "+" + sumOfDay + "+" + sumOfDigitsOfYear + " = " + sumOfDMY);
+	} else {
+		$("#yearsum").html(sumOfMonth + "+" + sumOfDay + "+" + sumOfYear + " = " + sumOfDMY);
+	}
 
 
-	$("#yearsum").html("Sum: " + lastNaJud);
+	var numSumOfDMY = sumOfDMY;
+	var digitsOfSumOfDMY = [];
+	while(numSumOfDMY > 0){
+		digitsOfSumOfDMY[digitsOfSumOfDMY.length] = numSumOfDMY % 10;
+		numSumOfDMY = parseInt(numSumOfDMY / 10);
+	}
+	digitsOfSumOfDMY.reverse();
+	console.log(digitsOfSumOfDMY)
+
+	// LAST EDIT DIREEEEEEEEEEEEEEEEEEEEEEEE
+	$("#lifepath").html("Life Path Number: " + sumOfDMY);
 
 
-	if (lastNaJud == 1) {
+	if (sumOfDMY == 1) {
 		document.getElementsByClassName('a')[0].style.display = 'block';
 		hide('a');
-	} else if (lastNaJud == 2) {
+	} else if (sumOfDMY == 2) {
 		document.getElementsByClassName('b')[0].style.display = 'block';
 		hide('b');
-	} else if (lastNaJud == 3) {
+	} else if (sumOfDMY == 3) {
 		document.getElementsByClassName('c')[0].style.display = 'block';
 		hide('c');
-	} else if (lastNaJud == 4) {
+	} else if (sumOfDMY == 4) {
 		document.getElementsByClassName('d')[0].style.display = 'block';
 		hide('d');
-	} else if (lastNaJud == 5) {
+	} else if (sumOfDMY == 5) {
 		document.getElementsByClassName('e')[0].style.display = 'block';
 		hide('e');
-	} else if (lastNaJud == 6) {
+	} else if (sumOfDMY == 6) {
 		document.getElementsByClassName('f')[0].style.display = 'block';
 		hide('f');
-	} else if (lastNaJud == 7) {
+	} else if (sumOfDMY == 7) {
 		document.getElementsByClassName('g')[0].style.display = 'block';
 		hide('g');
-	} else if (lastNaJud == 8) {
+	} else if (sumOfDMY == 8) {
 		document.getElementsByClassName('h')[0].style.display = 'block';
 		hide('h');
-	} else if (lastNaJud == 9) {
+	} else if (sumOfDMY == 9) {
 		document.getElementsByClassName('i')[0].style.display = 'block';
 		hide('i');
-	} else if (lastNaJud == 11) {
+	} else if (sumOfDMY == 11) {
 		document.getElementsByClassName('j')[0].style.display = 'block';
 		hide('j');
-	} else if (lastNaJud == 22) {
+	} else if (sumOfDMY == 22) {
 		document.getElementsByClassName('k')[0].style.display = 'block';
 		hide('k');
 	}
