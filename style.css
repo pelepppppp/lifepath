@@ -120,8 +120,26 @@ select:nth-child(4) {
 
 .paragraph {
 	margin-top: -6%;
+	font-size: 0.80rem;
 }
 
 #birthday {
-	margin-bottom: 10%;
+	margin-top: 20%;
+	/*font-size: 1rem;*/
+	color: #000;
+	font-weight: 700;
+}
+
+.bd {
+	font-size: 0.80rem;
+	font-weight: 500;
+	color: tomato;
+	/*margin-top: -3%;*/
+}
+
+#lifepath {
+	margin-top: 20%;
+	/*font-size: 1rem;*/
+	color: #000;
+	font-weight: 700;
 }

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-	// $("#card-body").hide();
+	$("#card-body").hide();
 	$("#btn").click(function () {
 		$("#card-body").show();
 		calculate();
@@ -10,8 +10,22 @@ function calculate() {
 	var month = $("#month").val();
 	var date = $("#date").val();
 	var year = $("#year").val();
+	var choice = $("#choice").val();
 
-	$("#birthday").html("Birthdate: " + month + "/" + date + "/" + year);
+	if(month === null && date === null && year === null && choice === null){
+		alert("Please choose date of birth or choose a number.")
+		$("#card-body").hide();
+	}
+
+	if(choice != null){
+		$("#card-body").hide();
+	}
+
+	if(month !== null && date !== null && year !== null){
+		$("#card-body").show();
+	}
+
+	$("#birthday").html(month + "/" + date + "/" + year);
 
 	// MONTH
 	var numMonth = month;
@@ -21,14 +35,30 @@ function calculate() {
 		numMonth = parseInt(numMonth / 10);
 	}
 	digitsOfMonth.reverse();
+
+	var numMonth2 = month;
+	var digitsOfMonth2 = [];
+	while(numMonth2 > 0){
+		digitsOfMonth2[digitsOfMonth2.length] = numMonth2 % 10;
+		numMonth2 = parseInt(numMonth2 / 10);
+	}
+	digitsOfMonth2.reverse();
+	var sumOfSumOfMonth = digitsOfMonth2[0] + digitsOfMonth2[1];
+	var sumOfMonth = digitsOfMonth[0] + digitsOfMonth[1];
 	if(digitsOfMonth.length === 2){
-		var sumOfMonth = digitsOfMonth[0] + digitsOfMonth[1];
 		$("#monthForEquation").html(month + " : " + digitsOfMonth[0] + "+" + digitsOfMonth[1] + " = " + sumOfMonth);
+		if(sumOfSumOfMonth.length === 2){
+			$("#monthForEquation").html(month + " : " + digitsOfMonth[0] + "+" + digitsOfMonth[1] + " = " + sumOfMonth + " = " + digitsOfMonth2[0] + "+" + digitsOfMonth2[1] + " = " + sumOfSumOfMonth);
+		}
 	} else {
 		var sumOfMonth = digitsOfMonth[0];
 		$("#monthForEquation").html(month + " : " + digitsOfMonth[0] + " = " + sumOfMonth);
 	}
-	
+
+	// console.log(sumOfSumOfMonth);
+	// console.log(digitsOfMonth2[0]);
+	// console.log(digitsOfMonth2[1]);
+
 	// DAY
 	var numDay = date;
 	var digitsOfDay = [];
@@ -37,13 +67,37 @@ function calculate() {
 		numDay = parseInt(numDay / 10);
 	}
 	digitsOfDay.reverse();
+
+	var numDay2 = date;
+	var digitsOfDay2 = [];
+	while(numDay2 > 0){
+		digitsOfDay2[digitsOfDay2.length] = numDay2 % 10;
+		numDay2 = parseInt(numDay2 / 10);
+	}
+	digitsOfDay2.reverse();
+	var sumOfSumOfDay = digitsOfDay2[0] + digitsOfDay2[1];
+
+	var x = sumOfSumOfDay;
+	var y = [];
+	while(x > 0){
+		y[y.length] = x % 10;
+		x = parseInt(x / 10);
+	}
+	y.reverse();
+	var z = y[0] + y[1];
+
+	var sumOfDay = digitsOfDay[0] + digitsOfDay[1];
+
 	if(digitsOfDay.length === 2){
-		var sumOfDay = digitsOfDay[0] + digitsOfDay[1];
+		if(y.length === 2){
+			$("#dayForEquation").html(date + " : " + digitsOfDay[0] + "+" + digitsOfDay[1] + " = " + sumOfDay + " = " +  y[0] + "+" + y[1] + " = " + z);
+		}
 		$("#dayForEquation").html(date + " : " + digitsOfDay[0] + "+" + digitsOfDay[1] + " = " + sumOfDay);
 	} else {
 		var sumOfDay = digitsOfDay[0];
 		$("#dayForEquation").html(date + " : " + digitsOfDay[0] + " = " + sumOfDay);
 	}
+
 
 	// YEAR
 	var numYear = year;
@@ -63,10 +117,20 @@ function calculate() {
 	}
 	digitsSumOfYear.reverse();
 	var sumOfDigitsOfYear = digitsSumOfYear[0] + digitsSumOfYear[1];
-	
 
+	var sumOfYearDigits2 = sumOfDigitsOfYear;
+	var digitsSumOfYear2 = [];
+	while(sumOfYearDigits2 > 0){
+		digitsSumOfYear2[digitsSumOfYear2.length] = sumOfYearDigits2 % 10;
+		sumOfYearDigits2 = parseInt(sumOfYearDigits2 / 10);
+	}
+	digitsSumOfYear2.reverse();
+	var sumOfSumOfDigitsOfYear2 = digitsSumOfYear2[0] + digitsSumOfYear2[1];
 	if(digitsSumOfYear.length === 2){
 		$("#yearForEquation").html(year + " : " + digitsOfYear[0] + "+" + digitsOfYear[1] + "+" + digitsOfYear[2] + "+" + digitsOfYear[3] + " = " + sumOfYear + " = " + digitsSumOfYear[0] + "+" + digitsSumOfYear[1] + " = " + sumOfDigitsOfYear);
+		if(digitsSumOfYear2.length == 2){
+			$("#yearForEquation").html(year + " : " + digitsOfYear[0] + "+" + digitsOfYear[1] + "+" + digitsOfYear[2] + "+" + digitsOfYear[3] + " = " + sumOfYear + " = " + digitsSumOfYear[0] + "+" + digitsSumOfYear[1] + " = " + sumOfDigitsOfYear + " = " + digitsSumOfYear2[0] + "+" + digitsSumOfYear2[1] + " = " + sumOfSumOfDigitsOfYear2);
+		}
 	} else {
 		$("#yearForEquation").html(year + " : " + digitsOfYear[0] + "+" + digitsOfYear[1] + "+" + digitsOfYear[2] + "+" + digitsOfYear[3] + " = " + sumOfYear);
 	}
@@ -84,12 +148,12 @@ function calculate() {
 	for (var i = 0, sumOfDMY = 0; i < digits.length; sumOfDMY += digits[i++]){
 		if(sumOfDMY == 13){
 			var last = (sumOfDMY % 10) + 1;
-			console.log(last);
+			// console.log(last);
 		}
 	}
 
 	if(digitsSumOfYear.length === 2){
-		$("#yearsum").html(sumOfMonth + "+" + sumOfDay + "+" + sumOfDigitsOfYear + " = " + sumOfDMY);
+		$("#yearsum").html(sumOfMonth + "+" + sumOfDay + "+" + sumOfSumOfDigitsOfYear2 + " = " + sumOfDMY);
 	} else {
 		$("#yearsum").html(sumOfMonth + "+" + sumOfDay + "+" + sumOfYear + " = " + sumOfDMY);
 	}
@@ -102,10 +166,9 @@ function calculate() {
 		numSumOfDMY = parseInt(numSumOfDMY / 10);
 	}
 	digitsOfSumOfDMY.reverse();
-	console.log(digitsOfSumOfDMY)
+	// console.log(digitsOfSumOfDMY)
 
-	// LAST EDIT DIREEEEEEEEEEEEEEEEEEEEEEEE
-	$("#lifepath").html("Life Path Number: " + sumOfDMY);
+	$("#lifepath").html(sumOfDMY);
 
 
 	if (sumOfDMY == 1) {
